@@ -1,4 +1,4 @@
 # simple_tokenizer
 A simple tokenizer for TinyStories data
 
-Made with https://github.com/tdooms
+Made with help and thoughts from https://github.com/tdooms, Dan Braun, Juan Diego Rodriguez, and Mat Allen.
