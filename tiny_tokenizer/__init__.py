@@ -16,10 +16,10 @@ with open(tokens_path, 'r') as f:
     
 
 # exclude documents with these characters
-excluded_characters_pat = re.compile(r'[:-;`\\<>\[\]=_@~/+&*%#{}$\t|]')
+excluded_characters_pat = re.compile(r'[:-;`\\<>\[\]=_@~/+&*%#{}$\t|-]')
 
 # after removing documents with excluded characters, make sure that the document doesn't have a match with this pattern
-unallowed_characters = re.compile('[^a-zA-Z.?!()0-9" ,\n\'-]')
+unallowed_characters = re.compile('[^a-zA-Z.?!()0-9" ,\n\']')
 
 single_character_toks = re.compile(r'[ ,."\'0-9?!()\n-]')
 
