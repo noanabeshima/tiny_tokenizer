@@ -27,7 +27,7 @@ def normalize(text):
     text = text.lower().strip()
     return text
 
-def pre_tokenize(text, known_toks=None):
+def pre_tokenize(text, known_toks=None, add_bos=True):
     matches = list(single_character_toks.finditer(text))
 
     i = 0
@@ -48,13 +48,14 @@ def pre_tokenize(text, known_toks=None):
     if known_toks is not None:
         res = [tok if tok in known_toks else f'[unk]' for tok in res]
 
-    res = ['[bos]'] + res
+    if add_bos:
+        res = ['[bos]'] + res
     return res
 
 
-def get_tok_strs(text, known_toks=None):
+def get_tok_strs(text, known_toks=None, add_bos=True):
     text = normalize(text)
-    tok_strs = pre_tokenize(text, known_toks=known_toks)
+    tok_strs = pre_tokenize(text, known_toks=known_toks, add_bos=add_bos)
 
     return tok_strs
 
