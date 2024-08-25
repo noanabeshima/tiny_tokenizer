@@ -55,6 +55,9 @@ def make_tokenizer():
         [
             normalizers.Replace("``", '"'),
             normalizers.Replace("''", '"'),
+            normalizers.Replace("“", '"'),
+            normalizers.Replace("”", '"'),
+            normalizers.Replace("’", "'"),
             normalizers.NFKD(),
             normalizers.Lowercase(),
             normalizers.StripAccents(),
